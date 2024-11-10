@@ -203,3 +203,34 @@ import '@fontsource/nunito/900.css';
 	}
 
 </style>
+
+<script>
+// TypeScript: Defining types for event and element parameters
+const main = document.querySelector("main");
+
+if (main) { // Check if `main` is not null
+  document.addEventListener("mousemove", (e: MouseEvent) => {
+    rotateElement(e, main);
+  });
+}
+
+// Function definition with explicit types
+function rotateElement(event: MouseEvent, element: HTMLElement): void {
+  // Get mouse position
+  const x = event.clientX;
+  const y = event.clientY;
+
+  // Find the middle of the screen
+  const middleX = window.innerWidth / 2;
+  const middleY = window.innerHeight / 2;
+
+  // Get offset from middle as a percentage and tone it down a little
+  const offsetX = ((x - middleX) / middleX) * 19;
+  const offsetY = ((y - middleY) / middleY) * 19;
+
+  // Set rotation CSS properties
+  element.style.setProperty("--rotateX", `${offsetX}deg`);
+  element.style.setProperty("--rotateY", `${-1 * offsetY}deg`);
+}
+
+</script>
