@@ -105,17 +105,21 @@ import '@fontsource/nunito/900.css';
 		font-size: 1rem;
 		margin-bottom: 2rem;
 		text-align: center;
-		color:white
+		transition: 0.2s;
 	}
 	.bottom {
 		font-family: "Nunito", sans-serif;
 		font-size: 0.5rem;
 		font-weight: 100;
 		line-height: 1;
-		text-align: right;
+		text-align: center;
 		bottom: 0;
 		margin-top: 0.5rem;
 		margin-bottom: 1em;
+		transition: 0.2s;
+	}
+	.bottom:is(:hover,  :focus-within) {
+		transform: scale(2);
 	}
 	.bottom-link {
 		font-family: "Nunito", sans-serif;
