@@ -12,7 +12,7 @@ import '@fontsource/nunito/800.css';
 import '@fontsource/nunito/900.css';
 ---
 
-<Layout title="VsCode Mamma">
+<Layout title="VsCode Mama">
 	<main class="vignette">
 		<svg
 			class="astro-a"
@@ -44,13 +44,17 @@ import '@fontsource/nunito/900.css';
 		</svg>
 		<div class="container">
 			<div class="centered"><img src="/icon-shadow.png" alt="logo" class="center"></div>
-			<h1>VsCode<span class="text-gradient">Mamma</span></h1>
+			<h1>VsCode<span class="text-gradient">Mama</span></h1>
 		</div>
 		<p class="instructions">
-			VsCode Mamma is a VsCode extension based on <code>
-				<a class="link-instructions" href="https://prettier.io/" style="text-decoration:none"><strong>prettier</strong></a></code>
-				using AI to make clean up your code!<br />
-			<strong>Installation:</strong> Download button is below.
+			VsCode Mama is an AI-driven VS Code extension designed to enhance, refactor, and optimize your code effortlessly. Supporting various Large Language Models (LLMs) like OpenAI, Claude.ai, and Ollama's Llama 3.2, this tool enables production-level code improvements and documentation with just a few clicks or shortcuts.
+			<br><strong>Installation:</strong> Download button is below.
+		</p>
+		<p class="features">
+			<strong>Supports Multiple LLMs</strong>: Choose between <code>OpenAI, Claude.ai, and Ollama (Llama 3.2)</code>.<br>
+			<strong>Code Refactoring and Optimization</strong>: Refactor entire files or highlighted sections for targeted improvements.<br>
+			<strong>Customizable API Key Integration</strong>: Easily add your own API keys for <code>OpenAI and Claude.ai</code>.<br>
+			<strong>Quick Model Switching</strong>: Reset configuration and seamlessly switch between LLMs as needed.
 		</p>
 		<ul role="list" class="link-card-grid">
 			<Card
@@ -63,7 +67,7 @@ import '@fontsource/nunito/900.css';
 			<Card2
 				href="https://github.com/UBH-Fall-2024/ub-hacking-create-your-repo-here-stealth-startup"
 				title="Repository"
-				body="Source Code"
+				body="Learn more about the extension here."
 		/>
 		</ul>
 		<p class="bottom">
@@ -177,6 +181,16 @@ import '@fontsource/nunito/900.css';
 		text-align: center;
 		border-radius: 8px;
 	}
+	.features {
+		font-family: "Nunito", sans-serif;
+		font-size: 0.9rem;
+		margin-bottom: 2rem;
+		border: 1px solid rgba(var(--accent-light), 25%);
+		background: linear-gradient(rgba(var(--accent-dark), 33%), rgba(var(--accent-dark), 0%));
+		padding: 1.5rem;
+		text-align: center;
+		border-radius: 8px;
+	}
 	.instructions code {
 		font-family: "Nunito", sans-serif;
 		font-size: 0.8em;
@@ -197,8 +211,8 @@ import '@fontsource/nunito/900.css';
 	}
 	.centered {
 		position: absolute;
-		top: 13%;
-		left: 82%;
+		top: 10%;
+		left: 81%;
 		transform: translate(-50%, -50%) scale(0.15);
 	}
 
@@ -225,7 +239,7 @@ function rotateElement(event: MouseEvent, element: HTMLElement): void {
   const middleY = window.innerHeight / 2;
 
   // Get offset from middle as a percentage and tone it down a little
-  const offsetX = ((x - middleX) / middleX) * 19;
+  const offsetX = ((x - middleX) / middleX) * 25;
   const offsetY = ((y - middleY) / middleY) * 19;
 
   // Set rotation CSS properties
