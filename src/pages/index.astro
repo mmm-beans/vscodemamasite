@@ -2,9 +2,17 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Card2 from '../components/Card2.astro';
+import '@fontsource/nunito/200.css';
+import '@fontsource/nunito/300.css';
+import '@fontsource/nunito/400.css';
+import '@fontsource/nunito/500.css';
+import '@fontsource/nunito/600.css';
+import '@fontsource/nunito/700.css';
+import '@fontsource/nunito/800.css';
+import '@fontsource/nunito/900.css';
 ---
 
-<Layout title="VsCode Mama">
+<Layout title="VsCode Mamma">
 	<main>
 		<svg
 			class="astro-a"
@@ -34,9 +42,9 @@ import Card2 from '../components/Card2.astro';
 				</linearGradient>
 			</defs>
 		</svg>
-		<h1>VsCode<span class="text-gradient">Mama</span></h1>
+		<h1>VsCode<span class="text-gradient">Mamma</span></h1>
 		<p class="instructions">
-			VsCode Mama is a VsCode extension based on <code>
+			VsCode Mamma is a VsCode extension based on <code>
 				<a class="link-instructions" href="https://prettier.io/" style="text-decoration:none"><strong>prettier</strong></a></code>
 				using AI to make clean up your code!<br />
 			<strong>Installation:</strong> Download button is below.
@@ -65,6 +73,7 @@ import Card2 from '../components/Card2.astro';
 
 <style>
 	main {
+		font-family: "Nunito", sans-serif;
 		margin: auto;
 		padding: 1rem;
 		width: 800px;
@@ -74,6 +83,7 @@ import Card2 from '../components/Card2.astro';
 		line-height: 1.6;
 	}
 	.astro-a {
+		font-family: "Nunito", sans-serif;
 		position: absolute;
 		top: -32px;
 		left: 50%;
@@ -83,6 +93,7 @@ import Card2 from '../components/Card2.astro';
 		z-index: -1;
 	}
 	h1 {
+		font-family: "Nunito", sans-serif;
 		font-size: 4rem;
 		font-weight: 700;
 		line-height: 1;
@@ -90,12 +101,14 @@ import Card2 from '../components/Card2.astro';
 		margin-bottom: 1em;
 	}
 	.link-instructions {
+		font-family: "Nunito", sans-serif;
 		font-size: 1rem;
 		margin-bottom: 2rem;
 		text-align: center;
 		color:white
 	}
 	.bottom {
+		font-family: "Nunito", sans-serif;
 		font-size: 0.5rem;
 		font-weight: 100;
 		line-height: 1;
@@ -105,6 +118,7 @@ import Card2 from '../components/Card2.astro';
 		margin-bottom: 1em;
 	}
 	.bottom-link {
+		font-family: "Nunito", sans-serif;
 		font-size: 0.5rem;
 		font-weight: 100;
 		line-height: 1;
@@ -122,6 +136,7 @@ import Card2 from '../components/Card2.astro';
 		background-position: 0%;
 	}
 	.instructions {
+		font-family: "Nunito", sans-serif;
 		font-size: 1rem;
 		margin-bottom: 2rem;
 		border: 1px solid rgba(var(--accent-light), 25%);
@@ -131,6 +146,7 @@ import Card2 from '../components/Card2.astro';
 		border-radius: 8px;
 	}
 	.instructions code {
+		font-family: "Nunito", sans-serif;
 		font-size: 0.8em;
 		font-weight: bold;
 		background: rgba(var(--accent-light), 12%);
@@ -146,5 +162,14 @@ import Card2 from '../components/Card2.astro';
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
 		gap: 2rem;
 		padding: 0;
+	}
+	.strokeme
+	{
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;  
 	}
 </style>
