@@ -13,7 +13,7 @@ import '@fontsource/nunito/900.css';
 ---
 
 <Layout title="VsCode Mamma">
-	<main>
+	<main class="vignette">
 		<svg
 			class="astro-a"
 			width="495"
@@ -42,7 +42,10 @@ import '@fontsource/nunito/900.css';
 				</linearGradient>
 			</defs>
 		</svg>
-		<h1>VsCode<span class="text-gradient">Mamma</span></h1>
+		<div class="container">
+			<div class="centered"><img src="/icon-shadow.png" alt="logo" class="center"></div>
+			<h1>VsCode<span class="text-gradient">Mamma</span></h1>
+		</div>
 		<p class="instructions">
 			VsCode Mamma is a VsCode extension based on <code>
 				<a class="link-instructions" href="https://prettier.io/" style="text-decoration:none"><strong>prettier</strong></a></code>
@@ -72,6 +75,27 @@ import '@fontsource/nunito/900.css';
 </Layout>
 
 <style>
+	body {
+  background-image: radial-gradient(rgb(28, 49, 77) 6%, transparent 10%),
+        radial-gradient(rgb(78, 29, 98) 6%, transparent 10%);
+  background-size:40px 40px;
+  background-position: 0 0, 60px 60px;
+  animation-name: backgroundmovement;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  box-shadow: 0 0 30px rgba(255, 109, 248, 0.9) inset;
+ }
+
+      /*creates movement of the background*/
+  @keyframes backgroundmovement {
+     0% {
+   background-position: 0px 0px, 60px 60px;
+        }
+    100% {
+   background-position: 60px 60px, 120px 120px;
+  }
+   }
 	main {
 		font-family: "Nunito", sans-serif;
 		margin: auto;
@@ -81,6 +105,9 @@ import '@fontsource/nunito/900.css';
 		color: white;
 		font-size: 20px;
 		line-height: 1.6;
+		position: relative;
+		transform-style: preserve-3d;
+  		transform: perspective(5000px) rotateY(var(--rotateX)) rotateX(var(--rotateY));
 	}
 	.astro-a {
 		font-family: "Nunito", sans-serif;
@@ -119,7 +146,7 @@ import '@fontsource/nunito/900.css';
 		transition: 0.2s;
 	}
 	.bottom:is(:hover,  :focus-within) {
-		transform: scale(2);
+		transform: scale(1.1);
 	}
 	.bottom-link {
 		font-family: "Nunito", sans-serif;
@@ -131,6 +158,7 @@ import '@fontsource/nunito/900.css';
 		text-decoration: none;
 		margin-top: 0.5rem;
 		margin-bottom: 1em;
+		color: aqua;
 	}
 	.text-gradient {
 		background-image: var(--accent-gradient);
@@ -167,13 +195,41 @@ import '@fontsource/nunito/900.css';
 		gap: 2rem;
 		padding: 0;
 	}
-	.strokeme
-	{
-    color: white;
-    text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;  
+	.centered {
+		position: absolute;
+		top: 13%;
+		left: 82%;
+		transform: translate(-50%, -50%) scale(0.15);
 	}
+
 </style>
+
+<script>
+	const main = document.querySelector("main");
+
+document.addEventListener("mousemove", (e) => {
+  rotateElement(e, main);
+});
+
+function rotateElement(event, element) {
+  // get mouse position
+  const x = event.clientX;
+  const y = event.clientY;
+  // console.log(x, y)
+
+  // find the middle
+  const middleX = window.innerWidth / 2;
+  const middleY = window.innerHeight / 2;
+  // console.log(middleX, middleY)
+
+  // get offset from middle as a percentage
+  // and tone it down a little
+  const offsetX = ((x - middleX) / middleX) * 19;
+  const offsetY = ((y - middleY) / middleY) * 19;
+  // console.log(offsetX, offsetY);
+
+  // set rotation
+  element.style.setProperty("--rotateX", offsetX + "deg");
+  element.style.setProperty("--rotateY", -1 * offsetY + "deg");
+}
+</script>

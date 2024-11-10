@@ -10,13 +10,13 @@ const { href, title, body } = Astro.props;
 
 <li class="link-card">
 	<a href={href}>
-		<img class="img" src="/icon.png" alt="logo" class="center" width="69" height="69" style="float: right;">
+		<img src="/icon.png" alt="logo" class="center" width="69" height="69" style="float: right;">
 		<h2>
 			{title}
 			<span>&rarr;</span>
 		</h2>
 		<p>
-			{body}
+			Download the extension here.
 		</p>
 	</a>
 </li>
@@ -25,7 +25,6 @@ const { href, title, body } = Astro.props;
   display: block;
   margin-left: auto;
   margin-right: auto;
-
 	}
 	.link-card {
 		list-style: none;
@@ -86,4 +85,3 @@ const { href, title, body } = Astro.props;
 	100% { transform: translate(0.5px, -1px) rotate(-0.5deg) scale(1.2); }
 	}
 </style>
-
